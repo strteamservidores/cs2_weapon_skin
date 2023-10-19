@@ -275,9 +275,7 @@ CON_COMMAND_F(skin, "skin", FCVAR_CLIENT_CAN_EXECUTE)
 		FnUTIL_ClientPrintAll(3, buf,nullptr, nullptr, nullptr, nullptr);
 		return;
 	}
-
-	CPlayer_WeaponServices* pWeaponServices = pPlayerPawn->m_pWeaponServices();
-
+	
 	int64_t steamid = pPlayerController->m_steamID();
 	int64_t weaponId = pWeaponServices->m_hActiveWeapon()->m_AttributeManager().m_Item().m_iItemDefinitionIndex();
 
