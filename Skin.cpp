@@ -295,9 +295,9 @@ CON_COMMAND_F(skin, "skin", FCVAR_CLIENT_CAN_EXECUTE)
 	pWeaponServices->RemoveWeapon(pPlayerWeapon);
 	FnEntityRemove(g_pGameEntitySystem,pPlayerWeapon,nullptr,-1);
 	FnGiveNamedItem(pPlayerPawn->m_pItemServices(),weapon_name->second.c_str(),nullptr,nullptr,nullptr,nullptr);
-	//CCSPlayer_ItemServices* pItemServices = static_cast<CCSPlayer_ItemServices*>(pPlayerPawn->m_pItemServices());
-	//pItemServices->GiveNamedItem(weapon_name->second.c_str());
-	// g_pGameRules->PlayerRespawn(static_cast<CCSPlayerPawn*>(pPlayerPawn));
+	CCSPlayer_ItemServices* pItemServices = static_cast<CCSPlayer_ItemServices*>(pPlayerPawn->m_pItemServices());
+	pItemServices->GiveNamedItem(weapon_name->second.c_str());
+	g_pGameRules->PlayerRespawn(static_cast<CCSPlayerPawn*>(pPlayerPawn));
 	META_CONPRINTF( "called by %lld\n", steamid);
 	sprintf(buf, " \x04 %s O número da skin foi modificado com sucesso: %d Modelo: %d Desgaste: %f",pPlayerController->m_iszPlayerName(),atoi(args.Arg(1)),atoi(args.Arg(2)),atof(args.Arg(3)));
 	FnUTIL_ClientPrintAll(3, buf,nullptr, nullptr, nullptr, nullptr);
