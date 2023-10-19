@@ -277,12 +277,6 @@ CON_COMMAND_F(skin, "skin", FCVAR_CLIENT_CAN_EXECUTE)
 	}
 
 	CPlayer_WeaponServices* pWeaponServices = pPlayerPawn->m_pWeaponServices();
-    	if(!pWeaponServices->m_hActiveWeapon()->m_AttributeManager().m_Item().m_iAccountID())
-    	{
-        	sprintf(buf, " \x04SKINS | \x02%s\x01 ERRO: \x04linha 282",pPlayerController->m_iszPlayerName());
-        	FnUTIL_ClientPrintAll(3, buf,nullptr, nullptr, nullptr, nullptr);
-        	return;
-    	}
 
 	int64_t steamid = pPlayerController->m_steamID();
 	int64_t weaponId = pWeaponServices->m_hActiveWeapon()->m_AttributeManager().m_Item().m_iItemDefinitionIndex();
