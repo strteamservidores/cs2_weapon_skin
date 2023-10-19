@@ -271,7 +271,7 @@ CON_COMMAND_F(skin, "skin", FCVAR_CLIENT_CAN_EXECUTE)
 	char buf[255] = {0};
 	if(args.ArgC() != 4)
 	{
-		sprintf(buf, " \x04 %s Você precisa de três parâmetros para modificar a capa usando o comando skin!",pPlayerController->m_iszPlayerName());
+		sprintf(buf, " \x04SKINS | \x02%s\x01 Digite no console: \x04skin ID PATTERN DESGASTE",pPlayerController->m_iszPlayerName());
 		FnUTIL_ClientPrintAll(3, buf,nullptr, nullptr, nullptr, nullptr);
 		return;
 	}
@@ -299,7 +299,7 @@ CON_COMMAND_F(skin, "skin", FCVAR_CLIENT_CAN_EXECUTE)
 	//pItemServices->GiveNamedItem(weapon_name->second.c_str());
 	// g_pGameRules->PlayerRespawn(static_cast<CCSPlayerPawn*>(pPlayerPawn));
 	META_CONPRINTF( "called by %lld\n", steamid);
-	sprintf(buf, " \x04 %s O número da skin foi modificado com sucesso: %d Modelo: %d Desgaste: %f",pPlayerController->m_iszPlayerName(),atoi(args.Arg(1)),atoi(args.Arg(2)),atof(args.Arg(3)));
+	sprintf(buf, " \x04SKINS | \x02%s \x01Sua skin foi modificada para: \x02%d \x01Pattern: \x02%d\x01 Desgaste: \x02%f",pPlayerController->m_iszPlayerName(),atoi(args.Arg(1)),atoi(args.Arg(2)),atof(args.Arg(3)));
 	FnUTIL_ClientPrintAll(3, buf,nullptr, nullptr, nullptr, nullptr);
 }
 
